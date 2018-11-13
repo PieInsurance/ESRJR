@@ -1,8 +1,9 @@
 {
-  "name": "pie-coding-exercise",
+  "name": "esrjr",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.10.7",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-scripts": "2.1.1"
