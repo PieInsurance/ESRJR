@@ -1,0 +1,12 @@
+.page-wrapper{
+  border: 1px solid red;
+}
+
+.page{
+  border: 1px solid blue;
+
+}
+
+.card{
+  border: 1px solid green;
+}

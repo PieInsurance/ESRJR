@@ -1,82 +1,71 @@
 import React, {Component} from "react";
-import {Input, Button, Icon} from "antd";
+import { Form, Input, Button } from 'antd';
+import postUser from './api';
 import "antd/dist/antd.css";
 import "./App.css";
 
-class Form extends Component {
-  constructor(){
-    super()
-    this.state={
-      firstName: "",
-      // lastName: "",
-    }
-    this.textInput = React.createRef();
+const FormItem = Form.Item;
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+class Form1 extends Component {
 
-  handleChange(e){
-      this.setState({ [e.target.name]: e.target.value });
-  }
-
-  handleSubmit(e){
+  handleSubmit = (e) => {
     e.preventDefault();
-    console.log(Object.assign({},this.state, {lastName: this.textInput.current.value} ), "State")
-    // axios.post('http://localhost:5000/user', { user: this.state })
-    //   .then(res => {
-    //     console.log(res);
-    //     window.location = '/contact'
-    //   })
-    //   .catch(function (error) {
-    //     // window.location = '/contact'
-    //     console.log(error);
-    //   });
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        postUser(values)
+        .then(response => {
+         if (response.success) {
+          console.log(values, "Success");;
+         }
+        })
+      }
+    });
   };
 
-  render(){
-    console.log(this.textInput, "LastName");
-    return(
-      <form className="form">
-        <div className="form-group">
-          <Input
-            className="form-input"
-            onChange={this.handleChange}
-            size="large"
-            name="firstName"
-            placeholder="First Name"
-            required
-          />
-          <label className="form-label">First Name</label>
-        </div>
-
-        <div className="form-group">
-          <Input
-            ref={this.textInput}
-            className="form-input"
-            // onChange={this.handleChange}
-            size="large"
-            label="Last Name"
-            name="lastName"
-            placeholder="Last Name"
-            required
-          />
-          <label className="form-label">Last Name</label>
-        </div>
-
-        <div className="form-group">
-          <Button
-            type="primary"
-            href="https://ant.design/components/button/"
-            target="_blank"
-            onClick={this.handleSubmit}
-            >Send
-            <Icon type="rocket"></Icon>
-          </Button>
-        </div>
-      </form>
-    )
+  render() {
+    const { getFieldDecorator } = this.props.form;
+    return (
+      <Form
+        onSubmit={this.handleSubmit} className="login-form">
+          <FormItem>
+            {getFieldDecorator('firstName', {
+              rules: [{ required: true, message: 'Please input your First Name!' }],
+            })(
+              <div className="form-group">
+                <h3>{this.props.title}</h3>
+                <Input
+                  type="text"
+                  placeholder="First Name"
+                />
+              </div>
+            )}
+          </FormItem>
+          <FormItem>
+            {getFieldDecorator('lastName', {
+              rules: [{ required: true, message: 'Please input your Last Name!' }],
+            })(
+              <div className="form-group">
+                <Input
+                  type="text"
+                  placeholder="Last Name"
+                />
+              </div>
+            )}
+          </FormItem>
+          <FormItem>
+            <div className="form-group">
+              <Button
+                type="primary"
+                htmlType="submit" className="login-form-button">
+                Send
+              </Button>
+            </div>
+          </FormItem>
+      </Form>
+    );
   }
 }
 
-export default Form;
+const WrappedNormalLoginForm = Form.create()(Form1);
+
+export default WrappedNormalLoginForm;

@@ -9,57 +9,13 @@ html{
   text-align: left;
 }
 
-/*------------------
-Form style
--------------------- */
-.form{
+.form-container{
+  border: 1px solid #eee;
   width: 100%;
+  margin: 2rem 0;
+  border-radius: 3px;
 }
 
-.form-group{
-  width: 100%;
-  padding: 1rem;
+.ant-form-explain{
+  padding-left: .5rem;
 }
-
-.form-input{
-  /* margin-bottom: 2rem; */
-  height: 5rem;
-  padding: 1.5rem 2rem;
-  border-radius: 2px;
-  background-color: rgba(226, 220, 223, 0.5);
-  border: none;
-  border-bottom: 3px solid transparent;
-  display: block;
-}
-
-.form-input:hover{
-  border-bottom: 3px solid rgba(226, 220, 223, 0.5);
-}
-
-.form-input:focus{
-  outline: none;
-  box-shadow: 0 1rem 2rem rgba(15, 14, 15, .1);
-  border-bottom: 3px solid rgb(5, 142, 15);
-}
-
-.form-input:invalid{
-  border-bottom: 3px solid rgb(249, 7, 109);
-}
-
-.form-label{
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-left: 2rem;
-  margin-top: .3rem;
-  display: block;
-  transition: all .3s;
-}
-
-.form-input:placeholder-shown + .form-label{
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-4rem);
-}
-/*------------------
-End Form style
--------------------- */

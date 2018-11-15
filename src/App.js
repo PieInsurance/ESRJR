@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Col, Row } from "antd";
 import Form from "./Form";
 import Form2 from "./Form2";
+// import ConfirmationPage from "./ConfirmationPage";
+// import {Route} from "react-router-dom";
+// import routes from "./routes";
 import "antd/dist/antd.css";
 import "./App.css";
 
@@ -42,8 +45,12 @@ class App extends Component {
                 }
               </p>
             </div>
-            <Form />
-            <Form2 />
+            <div className="form-container">
+              <Form title="Form"/>
+            </div>
+            <div className="form-container">
+              <Form2 title="Form 2"/>
+            </div>
           </Row>
         </Col>
       </main>
