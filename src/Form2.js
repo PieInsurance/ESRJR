@@ -69,7 +69,7 @@ class Form2 extends Component {
         <div className="form-group">
           <Button
             type="primary"
-            href={"./confirmed"}
+            href="./confirmed"
             onClick={this.handleSubmit}
             >Send
             <Icon type="rocket"></Icon>
