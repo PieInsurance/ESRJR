@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import "./App.css";
 import { Col, Row } from "antd";
+import Form from "./Form";
+import Form2 from "./Form2";
 import "antd/dist/antd.css";
+import "./App.css";
 
 class App extends Component {
   render() {
@@ -40,6 +42,8 @@ class App extends Component {
                 }
               </p>
             </div>
+            <Form />
+            <Form2 />
           </Row>
         </Col>
       </main>
