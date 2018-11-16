@@ -1,0 +1,29 @@
+main {
+  padding: 100px 0 0;
+}
+html {
+  font-size: 62.5%;
+}
+
+a:active,
+button:active {
+  transform: translateY(3px);
+}
+
+.body-copy {
+  text-align: left;
+}
+
+.form {
+  margin: 4rem 0;
+}
+
+.ant-form-explain {
+  padding-left: .5rem;
+}
+
+.btn-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

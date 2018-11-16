@@ -1,43 +1,37 @@
-.form-group{
+.form-group {
   width: 100%;
-  padding: .5rem;
 }
 
-.form-input{
-  height: 6rem;
+.form-input {
+  height: 5rem;
   font-size: 2rem;
   padding: 1.5rem 2rem;
-  border-radius: 2px;
+  border-radius: 3px;
   background-color: rgba(226, 220, 223, 0.5);
   border: none;
   border-bottom: 3px solid transparent;
   display: block;
 }
 
-.form-input:hover{
+.form-input:hover {
   border-bottom: 3px solid rgba(226, 220, 223, 0.5);
 }
 
-.form-input:focus{
+.form-input:focus {
   outline: none;
   box-shadow: 0 1rem 2rem rgba(15, 14, 15, .1);
   border-bottom: 3px solid rgb(5, 142, 15);
 }
 
-.form-input:invalid{
-  border-bottom: 3px solid rgb(249, 7, 109) !important;
-}
-
-.form-label{
+.form-label {
   font-size: 1.2rem;
   font-weight: 600;
   margin-left: 2rem;
-  /* margin-top: .3rem; */
   display: block;
   transition: all .3s;
 }
 
-.form-input:placeholder-shown + .form-label{
+.form-input:placeholder-shown + .form-label {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4rem);
